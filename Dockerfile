@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 RUN git clone https://github.com/flutter/flutter.git -b stable /usr/local/flutter
 ENV PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
 
-RUN flutter doctor
+
 RUN flutter config --enable-web
 
 WORKDIR /app
