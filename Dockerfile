@@ -1,4 +1,4 @@
-FROM ghcr.io/cirrusci/flutter:stable AS build-env
+FROM plugagile/flutter:stable AS build-env
 
 ENV FLUTTER_SUPPRESS_ANALYTICS=true
 
