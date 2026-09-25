@@ -18,7 +18,7 @@ RUN flutter config --enable-web
 WORKDIR /app
 COPY . .
 
-RUN flutter pub get
+RUN flutter pub get --no-example
 RUN flutter build web --release
 
 FROM nginx:alpine
