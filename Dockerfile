@@ -1,4 +1,4 @@
-FROM plugagile/flutter:stable AS build-env
+FROM instrumentisto/flutter:stable AS build-env
 
 ENV FLUTTER_SUPPRESS_ANALYTICS=true
 
