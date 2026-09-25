@@ -1,6 +1,15 @@
-FROM instrumentisto/flutter:stable AS build-env
+FROM ubuntu:22.04 AS build-env
 
-ENV FLUTTER_SUPPRESS_ANALYTICS=true
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PATH="/usr/local/flutter/bin:${PATH}"
+ENV TAR_OPTIONS="--no-same-owner"
+
+RUN apt-get update && apt-get install -y \
+    curl git unzip xz-utils zip libglu1-mesa \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN git clone https://github.com/flutter/flutter.git -b stable /usr/local/flutter
+RUN flutter config --no-analytics
 
 WORKDIR /app
 COPY . .
